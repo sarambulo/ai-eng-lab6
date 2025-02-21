@@ -27,7 +27,7 @@ def test_data_preparation(housing_data_sample):
     # Target and datapoints has same length
     assert feature_df.shape[0]==len(target_series)
 
-    #Feature only has numerical values
+    # Feature only has numerical values
     assert feature_df.shape[1] == feature_df.select_dtypes(include=(np.number,np.bool_)).shape[1]
 
 @pytest.fixture
@@ -37,5 +37,5 @@ def feature_target_sample(housing_data_sample):
 
 def test_data_split(feature_target_sample):
     return_tuple = data_split(*feature_target_sample)
-    # TODO test if the length of return_tuple is 4
-    raise NotImplemented
+    # Test if the length of return_tuple is 4
+    assert len(return_tuple) == 4
